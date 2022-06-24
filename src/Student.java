@@ -18,12 +18,12 @@ public class Student {
 		System.out.println("Names have been added.");
 	}
 	
-	public void seachName(String name) {
-		if(names.contains(name)) {
-			System.out.println("Searching by Name: " + name + " does exist.");
-		}else {
-			System.out.println("Searching by Name: " + name + " does not exist.");
-		}
+	public void seachName(String Studname) {
+		names.forEach(name -> {
+			if(name.equals(Studname)) {
+				System.out.println("Searching by Name: " + name + " does exist.");
+			}
+		});
 	}
 	
 	public void seachName(int index){
@@ -33,7 +33,6 @@ public class Student {
 			}
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("Student youre searching for via Index search does not exist.");
-			
 		}
 		
 	}	
@@ -44,13 +43,7 @@ public class Student {
 	}
 	
 	public void removeName(String studentName) {
-		if(names.contains(studentName)) {
-			int index = names.indexOf(studentName);
-			names.remove(index);
-			//names.remove(names.indexOf(studentName));
-			System.out.println("Student " + studentName + " has been removed");
-		}else {
-			System.out.println("Student " + studentName + " Does not exists.");
-		}
+		names.removeIf((name) -> name.equals(studentName));
+		
 	}
 }

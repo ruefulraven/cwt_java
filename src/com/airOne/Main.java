@@ -36,7 +36,7 @@ public class Main {
 				case "3": {
 					System.out.println("Enter phone number: ");
 					long pnumber = scanner.nextLong();
-					System.out.println("Contact Searched via phone Number: " + pbook.viewContactGivenPhone(pnumber));
+					pbook.viewContactGivenPhone(pnumber);
 					break;
 				}
 				case "4": {

@@ -8,7 +8,7 @@ public class ArrayListDemo {
 		stud.setNames();
 		System.out.println();
 		
-		stud.seachName("Axell");
+		stud.seachName("Axel");
 		System.out.println();
 		
 		stud.seachName(4);

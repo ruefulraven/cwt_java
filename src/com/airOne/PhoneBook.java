@@ -15,31 +15,18 @@ public class PhoneBook{
 		return contacts;
 	}
 	
-	public Contact viewContactGivenPhone(long phoneNumber) {
-		Contact contactViaPhoneNumber = null;
-		for(Contact contact : contacts) {
+	public void viewContactGivenPhone(long phoneNumber) {
+		contacts.forEach((contact) -> {
 			if(contact.getPhoneNumer() == phoneNumber) {
-				contactViaPhoneNumber = contact;
+				System.out.println(contact);
 			}
-		}
-		return contactViaPhoneNumber;
+		});
 	}
 	
 	public boolean removeContact(long phoneNumber) {
 		boolean isRemoved = false;
-		int index = 0;
-		int contactIndex = 0; 
-		for(Contact contact : contacts) {
-			if(contact.getPhoneNumer() == phoneNumber) {
-				System.out.println("index: " + index);
-				isRemoved = true;
-				contactIndex = index;
-			}
-			index++;
-		}
-		if(isRemoved) {
-			contacts.remove(contactIndex);
-		}
+		isRemoved = contacts.removeIf((contact) -> contact.getPhoneNumer() == phoneNumber);
+
 		return isRemoved;
 	}
 	

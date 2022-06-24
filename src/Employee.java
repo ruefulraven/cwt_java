@@ -33,11 +33,11 @@ public class Employee{
 	}
 	
 	public void getName(String key) {
-		if(!empNames.get(key).equals(null)) {
-			System.out.println("Student Exists, student name is: "+ empNames.get(key));
-		}else {
-			System.out.println("Student does not Exists via Key");
-		}
+		empNames.forEach((a, b) -> {
+			if(a.equals(key)) {
+				System.out.println("Student Exists, student name is: "+ empNames.get(key));
+			}
+		});
 	}
 	
 	public void printNamesKeySet() {
